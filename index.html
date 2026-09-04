@@ -1,155 +1,1841 @@
 <!DOCTYPE html>
-<!--
-  ================================================================
-  READ THIS BEFORE YOU PASTE ANYTHING
-
-  When Gemini gives you a page, you do NOT paste it into a part of
-  this file. You replace the entire file.
-
-  Click into the editor, press Ctrl+A (Cmd+A on Mac), press Delete,
-  then paste. Everything here is meant to be thrown away.
-
-  Do that only AFTER your live link works. Get the link first.
-  ================================================================
--->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My first site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1d30;
-    --card: #142a44;
-    --line: #27466a;
-    --aqua: #6de1d7;
-    --text: #ffffff;
-    --muted: #94a9bf;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--navy);
-    color: var(--text);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 6vh 20px;
-  }
-  main { width: 100%; max-width: 640px; }
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: clamp(38px, 9vw, 68px);
-    letter-spacing: -0.05em;
-    line-height: 1.02;
-    margin: 0 0 8px;
-  }
-  .name {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: clamp(18px, 4vw, 24px);
-    letter-spacing: -0.04em;
-    color: var(--aqua);
-    margin: 0 0 24px;
-  }
-  p.lead { font-size: 18px; color: var(--muted); margin: 0 0 34px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 28px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin: 0 0 16px;
-  }
-  ol { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 12px; color: var(--muted); }
-  li:last-child { margin-bottom: 0; }
-  li b { color: var(--text); font-weight: 700; }
-  code {
-    font-family: ui-monospace, "SF Mono", Consolas, monospace;
-    font-size: 0.92em;
-    background: #0a1727;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: var(--aqua);
-  }
-  a { color: var(--aqua); }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #6e839a;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora & Soil - Urban Gardening & Plant Care</title>
+    <!-- Single Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-dark: #1b4332;
+            --primary-light: #52b788;
+            --accent: #d97738;
+            --accent-hover: #b85d20;
+            --bg-main: #f8faf6;
+            --bg-card: #ffffff;
+            --bg-alt: #edf2ea;
+            --text-dark: #1f2923;
+            --text-muted: #57655d;
+            --text-light: #809286;
+            --border: #d2ded5;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 24px rgba(45,106,79,0.08);
+            --shadow-lg: 0 16px 36px rgba(27,67,50,0.12);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 250, 246, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(210, 222, 213, 0.6);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(45, 106, 79, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 67, 50, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(45, 106, 79, 0.1);
+            color: var(--primary-dark);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(45, 106, 79, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero {
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: #e8f5ed;
+            color: var(--primary);
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(82, 183, 136, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            line-height: 1.15;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 540px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-card-img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .badge-1 {
+            bottom: 30px;
+            left: -20px;
+        }
+
+        .badge-2 {
+            top: 40px;
+            right: -20px;
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .badge-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-alt);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .badge-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .badge-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-alt {
+            background-color: var(--bg-alt);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .section-tag {
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Filter Controls */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.2);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .category-tags {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tag-btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .tag-btn.active, .tag-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Plant Cards Grid */
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .plant-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(210, 222, 213, 0.5);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .plant-card-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .plant-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .plant-card:hover .plant-card-img {
+            transform: scale(1.05);
+        }
+
+        .plant-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .plant-card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .plant-name {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .plant-botanical {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .plant-meta {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-top: 1px dashed var(--border);
+            border-bottom: 1px dashed var(--border);
+            margin-bottom: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .plant-card-footer {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-card {
+            width: 100%;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .planner-wrapper {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .planner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .planner-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+        }
+
+        .plant-palette {
+            background: var(--bg-main);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .palette-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .seed-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .seed-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .seed-item:hover, .seed-item.selected {
+            border-color: var(--primary);
+            background: #f0f7f2;
+            transform: translateX(4px);
+        }
+
+        .seed-item.selected {
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .seed-icon {
+            font-size: 1.4rem;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-alt);
+            border-radius: 50%;
+        }
+
+        .seed-info {
+            flex: 1;
+        }
+
+        .seed-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .seed-desc {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .garden-bed-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .garden-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 4/3;
+            background: #5c4033; /* Soil color */
+            padding: 16px;
+            border-radius: var(--radius-md);
+            box-shadow: inset 0 4px 12px rgba(0,0,0,0.3);
+            border: 8px solid #3d2b22;
+        }
+
+        .grid-cell {
+            background: #4a3328;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            min-height: 80px;
+        }
+
+        .grid-cell:hover {
+            background: #573d30;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .grid-cell .plant-emoji {
+            font-size: 2.2rem;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .grid-cell .plant-label {
+            font-size: 0.7rem;
+            color: #f1e4d8;
+            margin-top: 4px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        .planner-stats {
+            margin-top: 24px;
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+            justify-content: space-between;
+            background: var(--bg-main);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+        }
+
+        .p-stat {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .p-stat strong {
+            color: var(--primary-dark);
+            font-size: 1rem;
+            display: block;
+        }
+
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .tracker-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tracker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tracker-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .tracker-location {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .water-status {
+            background: var(--bg-main);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .btn-water {
+            background: #e0f2fe;
+            color: #0284c7;
+            border: 1px solid #bae6fd;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn-water:hover {
+            background: #0284c7;
+            color: white;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: white;
+            border: 1px solid var(--border);
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .season-box {
+            background: var(--bg-main);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent);
+        }
+
+        .season-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .season-box ul {
+            padding-left: 18px;
+            list-style-type: disc;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .season-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 28, 21, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-main);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 32px;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .modal-subtitle {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .care-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .care-guide-item {
+            background: var(--bg-main);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+        }
+
+        .care-guide-item strong {
+            display: block;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .care-guide-item span {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-about p {
+            color: rgba(255,255,255,0.7);
+            margin-top: 16px;
+            max-width: 320px;
+            font-size: 0.95rem;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-card-img {
+                height: 380px;
+            }
+            .planner-layout {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.6rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .garden-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .care-guide-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<main>
 
-  <span class="badge">Cal Poly Vibe Coding &middot; Session 01</span>
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🌿</div>
+                <span>Flora & Soil</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#library" class="active">Plant Library</a>
+                <a href="#planner">Bed Planner</a>
+                <a href="#tracker">Water Tracker</a>
+                <a href="#guide">Seasonal Guide</a>
+            </nav>
 
-  <h1>It&rsquo;s live.</h1>
+            <div class="nav-actions">
+                <button class="btn-primary" onclick="scrollToSection('planner')">
+                    <span>Garden Planner</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <!-- Step 5: change the name below to yours, then commit. -->
-  <p class="name">Built by Alysa Pelosi</p>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag"> 🌱 Modern Botanical Companion</span>
+                    <h1 class="hero-title">Nurture Your Green <span>Sanctuary</span> With Confidence</h1>
+                    <p class="hero-subtitle">Discover expert plant care guides, design custom vegetable garden beds, and never miss a watering schedule with our smart urban gardening toolkit.</p>
+                    
+                    <div class="hero-btns">
+                        <a href="#library" class="btn-primary">Explore 100+ Plants</a>
+                        <a href="#planner" class="btn-secondary">Design Garden Bed</a>
+                    </div>
 
-  <p class="lead">
-    This page is on the internet. Anyone you send this link to can open it,
-    on any device, right now. You made that happen in about five minutes.
-  </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Plant Survival Rate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12k+</span>
+                            <span class="stat-label">Gardens Designed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Organic Care Tips</span>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="card">
-    <h2>Three things, in this order</h2>
-    <ol>
-      <li><b>Put your name on it.</b> Edit <code>index.html</code>, change
-        YOUR NAME HERE above, commit, refresh this page.</li>
-      <li><b>Submit this link.</b> Go to
-        <a href="https://www.calpolyvibecoding.com/">calpolyvibecoding.com</a>,
-        make an account, and paste this URL in. That is how you get counted,
-        and how Claude seats get assigned.</li>
-      <li><b>Then build.</b> Open Gemini, get a page, and replace this entire
-        file with it.</li>
-    </ol>
-  </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80" alt="Lush Garden" class="hero-card-img" onerror="this.src='https://placehold.co/800x520/2d6a4f/ffffff?text=Urban+Gardening'">
+                    
+                    <div class="floating-badge badge-1">
+                        <div class="badge-icon">💧</div>
+                        <div>
+                            <div class="badge-title">Watering Reminder</div>
+                            <div class="badge-desc">Monstera Deliciosa due today</div>
+                        </div>
+                    </div>
 
-  <div class="card">
-    <h2>How to replace this page</h2>
-    <ol>
-      <li>Copy what Gemini gives you with the <b>copy button</b> on the code
-        block. Do not click and drag.</li>
-      <li>Open <code>index.html</code> here and click the pencil icon.</li>
-      <li><b>Ctrl+A</b> (<b>Cmd+A</b> on Mac), then <b>Delete</b>. All of it.
-        Yes, really.</li>
-      <li>Paste, commit, refresh.</li>
-    </ol>
-  </div>
+                    <div class="floating-badge badge-2">
+                        <div class="badge-icon">☀️</div>
+                        <div>
+                            <div class="badge-title">Optimal Sunlight</div>
+                            <div class="badge-desc">Bright indirect light required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    Nothing on this page is precious. It exists so the link has something to
-    show before you have something of your own.
-  </footer>
+    <section id="library" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Plant Directory</span>
+                <h2 class="section-title">Explore Plant Care Guides</h2>
+                <p class="section-desc">Search through our curated collection of indoor houseplants, herbs, and garden vegetables with tailored care routines.</p>
+            </div>
 
-</main>
+            <div class="filter-bar">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search plants by name (e.g., Monstera, Basil, Tomato)...">
+                </div>
+
+                <div class="category-tags">
+                    <button class="tag-btn active" data-category="all">All Plants</button>
+                    <button class="tag-btn" data-category="houseplant">Houseplants</button>
+                    <button class="tag-btn" data-category="edible">Edibles & Herbs</button>
+                    <button class="tag-btn" data-category="succulent">Succulents</button>
+                    <button class="tag-btn" data-category="low-light">Low Light Friendly</button>
+                </div>
+            </div>
+
+            <div class="plant-grid" id="plantGrid">
+                <!-- Dynamically Populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="planner" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Planner</span>
+                <h2 class="section-title">Visual Garden Bed Designer</h2>
+                <p class="section-desc">Select seeds from the palette and click on the soil grid to layout your ideal companion planting arrangement.</p>
+            </div>
+
+            <div class="planner-wrapper">
+                <div class="planner-header">
+                    <div>
+                        <h3 class="serif-font" style="font-size: 1.5rem; color: var(--primary-dark);">My 4x4 Raised Bed</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Click a plant on the left, then click a soil square to plant!</p>
+                    </div>
+                    <button class="btn-secondary" id="clearPlannerBtn">Clear Garden Bed</button>
+                </div>
+
+                <div class="planner-layout">
+                    <div class="plant-palette">
+                        <div class="palette-title">
+                            <span>Seed Palette</span>
+                            <span style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">Active Selection</span>
+                        </div>
+                        <div class="seed-options" id="seedPalette">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="garden-bed-container">
+                        <div class="garden-grid" id="gardenGrid">
+                            <!-- 16 Grid cells built with JS -->
+                        </div>
+
+                        <div class="planner-stats">
+                            <div class="p-stat">
+                                Total Plants
+                                <strong id="statTotal">0 / 16</strong>
+                            </div>
+                            <div class="p-stat">
+                                Estimated Yield
+                                <strong id="statYield">0 lbs / season</strong>
+                            </div>
+                            <div class="p-stat">
+                                Sunlight Needed
+                                <strong>6-8 Hrs / Day</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracker" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Smart Dashboard</span>
+                <h2 class="section-title">My Plant Watering Routine</h2>
+                <p class="section-desc">Track moisture schedules and click to water your personal plant collection.</p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 24px;">
+                <button class="btn-primary" onclick="openAddPlantModal()">+ Add Custom Plant</button>
+            </div>
+
+            <div class="tracker-grid" id="trackerGrid">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="guide" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Seasonal Wisdom</span>
+                <h2 class="section-title">Year-Round Gardening Calendar</h2>
+                <p class="section-desc">Essential tasks and planting windows tailored to seasonal changes.</p>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="spring">🌸 Spring</button>
+                <button class="tab-btn" data-tab="summer">☀️ Summer</button>
+                <button class="tab-btn" data-tab="autumn">🍂 Autumn</button>
+                <button class="tab-btn" data-tab="winter">❄️ Winter</button>
+            </div>
+
+            <div id="spring" class="tab-content active">
+                <div class="season-grid">
+                    <div class="season-box">
+                        <h4>Seed Starting & Sowing</h4>
+                        <ul>
+                            <li>Start tomatoes, peppers, and eggplants indoors 6 weeks before last frost.</li>
+                            <li>Directly sow peas, radishes, spinach, and lettuce outdoors early spring.</li>
+                            <li>Pot up indoor foliage plants as new growth begins.</li>
+                        </ul>
+                    </div>
+                    <div class="season-box">
+                        <h4>Soil Preparation</h4>
+                        <ul>
+                            <li>Top-dress garden beds with 2-3 inches of organic compost.</li>
+                            <li>Test soil pH and amend with lime or sulfur if needed.</li>
+                            <li>Avoid tilling wet soil to prevent compaction.</li>
+                        </ul>
+                    </div>
+                    <div class="season-box">
+                        <h4>Maintenance & Care</h4>
+                        <ul>
+                            <li>Prune fruit trees and summer-flowering shrubs before buds break.</li>
+                            <li>Begin fertilizing indoor plants with diluted balanced fertilizer.</li>
+                            <li>Inspect young shoots for early aphid outbreaks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="summer" class="tab-content">
+                <div class="season-grid">
+                    <div class="season-box">
+                        <h4>Watering & Mulching</h4>
+                        <ul>
+                            <li>Water deeply early in the morning to prevent evaporation loss.</li>
+                            <li>Apply 2 inches of straw or wood mulch to conserve soil moisture.</li>
+                            <li>Monitor container plants daily—they dry out quickly in high heat.</li>
+                        </ul>
+                    </div>
+                    <div class="season-box">
+                        <h4>Harvesting & Pruning</h4>
+                        <ul>
+                            <li>Pinch back basil and herbs to prevent early flowering and seed set.</li>
+                            <li>Prune tomato suckers for higher airflow and bigger fruit yields.</li>
+                            <li>Harvest beans, cucumbers, and zuchinnis frequently to encourage production.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="autumn" class="tab-content">
+                <div class="season-grid">
+                    <div class="season-box">
+                        <h4>Fall Sowing & Bulbs</h4>
+                        <ul>
+                            <li>Plant spring-flowering bulbs like tulips, daffodils, and alliums.</li>
+                            <li>Sow cool-weather crops: kale, garlic, spinach, and winter carrots.</li>
+                            <li>Divide overgrown perennials like hostas and daylilies.</li>
+                        </ul>
+                    </div>
+                    <div class="season-box">
+                        <h4>Garden Cleanup</h4>
+                        <ul>
+                            <li>Collect fallen disease-free leaves for leaf mold or compost.</li>
+                            <li>Protect sensitive outdoor potted plants before the first hard freeze.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="winter" class="tab-content">
+                <div class="season-grid">
+                    <div class="season-box">
+                        <h4>Indoor Plant Care</h4>
+                        <ul>
+                            <li>Reduce watering frequency as plant growth slows significantly.</li>
+                            <li>Move houseplants closer to windows to capture limited sunlight.</li>
+                            <li>Wipe down dust from leaves to improve photosynthesis efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="season-box">
+                        <h4>Planning & Prep</h4>
+                        <ul>
+                            <li>Order heirloom seeds for upcoming spring garden beds.</li>
+                            <li>Clean and sterilize seed trays, pots, and hand tools with dilute soap solution.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Detailed Plant View -->
+    <div class="modal-overlay" id="plantModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('plantModal')">&times;</button>
+            <img src="" alt="Plant Image" class="modal-img" id="modalImg">
+            <div class="modal-body">
+                <h3 class="modal-title" id="modalTitle">Plant Name</h3>
+                <div class="modal-subtitle" id="modalBotanical">Botanical Name</div>
+                <p id="modalDesc" style="color: var(--text-muted); font-size: 0.95rem;"></p>
+
+                <div class="care-guide-grid">
+                    <div class="care-guide-item">
+                        <strong>☀️ Sunlight</strong>
+                        <span id="modalSunlight">-</span>
+                    </div>
+                    <div class="care-guide-item">
+                        <strong>💧 Watering</strong>
+                        <span id="modalWater">-</span>
+                    </div>
+                    <div class="care-guide-item">
+                        <strong>🌱 Soil Type</strong>
+                        <span id="modalSoil">-</span>
+                    </div>
+                    <div class="care-guide-item">
+                        <strong>🐾 Pet Friendly</strong>
+                        <span id="modalPet">-</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%; justify-content: center;" id="modalAddTrackerBtn">Add to My Water Tracker</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Custom Plant to Tracker -->
+    <div class="modal-overlay" id="addTrackerModal">
+        <div class="modal-card" style="max-width: 460px;">
+            <button class="modal-close" onclick="closeModal('addTrackerModal')">&times;</button>
+            <div class="modal-body">
+                <h3 class="serif-font" style="font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 16px;">Add Plant to Tracker</h3>
+                
+                <form id="addPlantForm" onsubmit="handleAddPlantForm(event)">
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Plant Name</label>
+                        <input type="text" id="inputPlantName" required style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Location</label>
+                        <input type="text" id="inputPlantLoc" placeholder="e.g. Living Room Window" required style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Watering Interval (Days)</label>
+                        <input type="number" id="inputPlantDays" min="1" max="30" value="7" required style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Save to Tracker</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo" style="color: white;">
+                        <div class="logo-icon" style="background: var(--primary-light);">🌿</div>
+                        <span>Flora & Soil</span>
+                    </div>
+                    <p>Empowering plant lovers and urban gardeners with intuitive design tools, care intelligence, and sustainable gardening advice.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#library">Plant Library</a></li>
+                        <li><a href="#planner">Bed Visualizer</a></li>
+                        <li><a href="#tracker">Moisture Tracker</a></li>
+                        <li><a href="#guide">Seasonal Calendar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Plant Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#library">Indoor Houseplants</a></li>
+                        <li><a href="#library">Culinary Herbs</a></li>
+                        <li><a href="#library">Organic Veggies</a></li>
+                        <li><a href="#library">Low Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Gardening Tips</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Composting 101</a></li>
+                        <li><a href="#">Companion Planting</a></li>
+                        <li><a href="#">Organic Pest Control</a></li>
+                        <li><a href="#">Potting Mix Recipes</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2026 Flora & Soil Gardening Hub. Designed for urban green spaces.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Plant Library Data
+        const plantsData = [
+            {
+                id: 'monstera',
+                name: 'Monstera Deliciosa',
+                botanical: 'Monstera deliciosa',
+                category: 'houseplant low-light',
+                image: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Bright, Indirect Light',
+                water: 'Every 7-10 Days',
+                soil: 'Well-draining Peat Mix',
+                pet: 'Toxic to Pets ⚠️',
+                desc: 'Famous for its distinctive natural leaf holes (fenestrations). A striking tropical foliage houseplant that brings a jungle vibe to any space.'
+            },
+            {
+                id: 'tomato',
+                name: 'Heirloom Tomato',
+                botanical: 'Solanum lycopersicum',
+                category: 'edible',
+                image: 'https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Full Sun (6-8 hours)',
+                water: 'Consistent, Deep Watering',
+                soil: 'Rich, Organic Soil',
+                pet: 'Leaves Toxic to Pets',
+                desc: 'Juicy, rich-flavored summer staple. Requires staking or a cage for support as vines grow fruit heavy.'
+            },
+            {
+                id: 'basil',
+                name: 'Sweet Basil',
+                botanical: 'Ocimum basilicum',
+                category: 'edible',
+                image: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Full Sun to Partial Shade',
+                water: 'Keep Soil Moist',
+                soil: 'Moist, Well-drained',
+                pet: 'Pet Safe 🐾',
+                desc: 'Aromatic culinary herb essential for pesto, sauces, and caprese salads. Pinch top leaves to promote bushy growth.'
+            },
+            {
+                id: 'snake',
+                name: 'Snake Plant',
+                botanical: 'Sansevieria trifasciata',
+                category: 'houseplant succulent low-light',
+                image: 'https://images.unsplash.com/photo-1593482892290-f54927ae1bac?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Low to Bright Light',
+                water: 'Every 2-3 Weeks',
+                soil: 'Cactus/Succulent Mix',
+                pet: 'Toxic to Pets ⚠️',
+                desc: 'Extremely resilient architectural plant that purifies indoor air. Thrives on neglect and tolerates low ambient light.'
+            },
+            {
+                id: 'lavender',
+                name: 'English Lavender',
+                botanical: 'Lavandula angustifolia',
+                category: 'edible',
+                image: 'https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Full Direct Sun',
+                water: 'Low (Allow to dry out)',
+                soil: 'Sandy, Well-Draining',
+                pet: 'Mildly Toxic',
+                desc: 'Fragrant perennial with soothing purple flower spikes that attract bees and butterflies to sunny garden borders.'
+            },
+            {
+                id: 'pothos',
+                name: 'Golden Pothos',
+                botanical: 'Epipremnum aureum',
+                category: 'houseplant low-light',
+                image: 'https://images.unsplash.com/photo-1596724811751-0ae46b6572b1?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Low to Medium Light',
+                water: 'Every 1-2 Weeks',
+                soil: 'Standard Potting Mix',
+                pet: 'Toxic to Pets ⚠️',
+                desc: 'Fast-growing trailing vine with heart-shaped variegated leaves. Perfect for hanging planters and bookshelf decor.'
+            },
+            {
+                id: 'echeveria',
+                name: 'Echeveria Rosette',
+                botanical: 'Echeveria elegans',
+                category: 'succulent',
+                image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Bright Direct Sunlight',
+                water: 'Sparingly (Soak & Dry)',
+                soil: 'Gritty Succulent Mix',
+                pet: 'Pet Safe 🐾',
+                desc: 'Compact succulent forming neat geometric rosettes in pastel shades of green, pink, and silver-blue.'
+            },
+            {
+                id: 'carrot',
+                name: 'Chantenay Carrot',
+                botanical: 'Daucus carota',
+                category: 'edible',
+                image: 'https://images.unsplash.com/photo-1598170845058-12ef4a45753b?auto=format&fit=crop&w=600&q=80',
+                sunlight: 'Full Sun',
+                water: 'Regular, Even Moisture',
+                soil: 'Loose, Rock-Free Soil',
+                pet: 'Pet Safe 🐾',
+                desc: 'Sweet, crisp root crop ideal for deep raised beds or containers. Requires loose soil for straight root development.'
+            }
+        ];
+
+        // Garden Bed Seeds Palette Data
+        const seedData = [
+            { id: 'tomato', name: 'Tomato', emoji: '🍅', yield: 12, desc: 'Heavy producer, needs sun' },
+            { id: 'carrot', name: 'Carrot', emoji: '🥕', yield: 4, desc: 'Deep root crop' },
+            { id: 'basil', name: 'Basil', emoji: '🌿', yield: 2, desc: 'Great companion plant' },
+            { id: 'pepper', name: 'Bell Pepper', emoji: '🫑', yield: 6, desc: 'Loves summer heat' },
+            { id: 'salad', name: 'Lettuce', emoji: '🥬', yield: 3, desc: 'Fast leaf growth' },
+            { id: 'flower', name: 'Marigold', emoji: '🌼', yield: 0, desc: 'Natural pest deterrent' }
+        ];
+
+        // Default Tracker State
+        let trackerPlants = [
+            { id: 1, name: 'Living Room Monstera', location: 'Living Room', interval: 8, daysLeft: 2 },
+            { id: 2, name: 'Kitchen Basil Pot', location: 'Kitchen Window', interval: 3, daysLeft: 0 },
+            { id: 3, name: 'Balcony Tomatoes', location: 'South Terrace', interval: 2, daysLeft: 1 }
+        ];
+
+        // Garden Planner State (16 slots for 4x4)
+        let gardenGridState = Array(16).fill(null);
+        let selectedSeed = seedData[0];
+
+        // --- STREAMING_CHUNK:Implementing plant care search and filtering... ---
+        function renderPlantGrid(category = 'all', searchQuery = '') {
+            const grid = document.getElementById('plantGrid');
+            grid.innerHTML = '';
+
+            const filtered = plantsData.filter(plant => {
+                const matchesCat = category === 'all' || plant.category.includes(category);
+                const matchesSearch = plant.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      plant.botanical.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No plants found matching your criteria.</div>`;
+                return;
+            }
+
+            filtered.forEach(plant => {
+                const card = document.createElement('div');
+                card.className = 'plant-card';
+                card.innerHTML = `
+                    <div class="plant-card-img-wrap">
+                        <img src="${plant.image}" alt="${plant.name}" class="plant-card-img" onerror="this.src='https://placehold.co/600x400/2d6a4f/ffffff?text=${encodeURIComponent(plant.name)}'">
+                        <span class="plant-badge">${plant.sunlight.split(' ')[0]} Sun</span>
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-name">${plant.name}</h3>
+                        <div class="plant-botanical">${plant.botanical}</div>
+                        <div class="plant-meta">
+                            <div class="meta-item">💧 ${plant.water}</div>
+                            <div class="meta-item">${plant.pet.includes('Safe') ? '🐾 Safe' : '⚠️ Toxic'}</div>
+                        </div>
+                        <div class="plant-card-footer">
+                            <button class="btn-card btn-secondary" onclick="openPlantModal('${plant.id}')">View Details</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- STREAMING_CHUNK:Implementing garden bed planner grid logic... ---
+        function initGardenPlanner() {
+            const paletteEl = document.getElementById('seedPalette');
+            paletteEl.innerHTML = '';
+
+            seedData.forEach(seed => {
+                const item = document.createElement('div');
+                item.className = `seed-item ${seed.id === selectedSeed.id ? 'selected' : ''}`;
+                item.onclick = () => {
+                    document.querySelectorAll('.seed-item').forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
+                    selectedSeed = seed;
+                };
+                item.innerHTML = `
+                    <div class="seed-icon">${seed.emoji}</div>
+                    <div class="seed-info">
+                        <div class="seed-name">${seed.name}</div>
+                        <div class="seed-desc">${seed.desc}</div>
+                    </div>
+                `;
+                paletteEl.appendChild(item);
+            });
+
+            renderGardenGrid();
+        }
+
+        function renderGardenGrid() {
+            const gridEl = document.getElementById('gardenGrid');
+            gridEl.innerHTML = '';
+
+            gardenGridState.forEach((cell, index) => {
+                const cellEl = document.createElement('div');
+                cellEl.className = 'grid-cell';
+                cellEl.onclick = () => togglePlantInCell(index);
+
+                if (cell) {
+                    cellEl.innerHTML = `
+                        <div class="plant-emoji">${cell.emoji}</div>
+                        <div class="plant-label">${cell.name}</div>
+                    `;
+                }
+                gridEl.appendChild(cellEl);
+            });
+
+            updatePlannerStats();
+        }
+
+        function togglePlantInCell(index) {
+            if (gardenGridState[index]) {
+                // Remove if already planted
+                gardenGridState[index] = null;
+            } else {
+                // Plant selected seed
+                gardenGridState[index] = selectedSeed;
+            }
+            renderGardenGrid();
+        }
+
+        function updatePlannerStats() {
+            const totalPlanted = gardenGridState.filter(c => c !== null).length;
+            const totalYield = gardenGridState.reduce((acc, c) => acc + (c ? c.yield : 0), 0);
+
+            document.getElementById('statTotal').innerText = `${totalPlanted} / 16`;
+            document.getElementById('statYield').innerText = `~${totalYield} lbs / season`;
+        }
+
+        document.getElementById('clearPlannerBtn').onclick = () => {
+            gardenGridState = Array(16).fill(null);
+            renderGardenGrid();
+        };
+
+        // --- STREAMING_CHUNK:Implementing watering tracker and local storage... ---
+        function renderTracker() {
+            const grid = document.getElementById('trackerGrid');
+            grid.innerHTML = '';
+
+            trackerPlants.forEach(plant => {
+                const percent = Math.max(0, Math.min(100, (plant.daysLeft / plant.interval) * 100));
+                const isNeedWater = plant.daysLeft <= 0;
+
+                const card = document.createElement('div');
+                card.className = 'tracker-card';
+                card.innerHTML = `
+                    <div class="tracker-header">
+                        <div>
+                            <div class="tracker-title">${plant.name}</div>
+                            <div class="tracker-location">📍 ${plant.location}</div>
+                        </div>
+                        <button onclick="deleteTrackerPlant(${plant.id})" style="background:none; border:none; color: var(--text-light); font-size:1.1rem;">&times;</button>
+                    </div>
+
+                    <div class="water-status">
+                        <div>
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Water Status</span>
+                            <div style="font-weight:700; color: ${isNeedWater ? '#e11d48' : 'var(--primary-dark)'}">
+                                ${isNeedWater ? '⚠️ Needs Water Today!' : `Water in ${plant.daysLeft} day(s)`}
+                            </div>
+                        </div>
+                        <span style="font-size: 1.5rem;">${isNeedWater ? '🥀' : '🪴'}</span>
+                    </div>
+
+                    <div>
+                        <div style="display:flex; justify-shadow:space-between; font-size:0.75rem; color:var(--text-light); margin-bottom:4px;">
+                            <span>Moisture Level</span>
+                            <span>${Math.round(percent)}%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: ${percent}%; background-color: ${isNeedWater ? '#e11d48' : '#3b82f6'};"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn-water" onclick="waterPlant(${plant.id})">
+                        <span>💧</span>
+                        <span>${isNeedWater ? 'Water Now' : 'Reset Timer'}</span>
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function waterPlant(id) {
+            const plant = trackerPlants.find(p => p.id === id);
+            if (plant) {
+                plant.daysLeft = plant.interval;
+                renderTracker();
+            }
+        }
+
+        function deleteTrackerPlant(id) {
+            trackerPlants = trackerPlants.filter(p => p.id !== id);
+            renderTracker();
+        }
+
+        function openAddPlantModal() {
+            document.getElementById('addTrackerModal').classList.add('active');
+        }
+
+        function handleAddPlantForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('inputPlantName').value;
+            const location = document.getElementById('inputPlantLoc').value;
+            const interval = parseInt(document.getElementById('inputPlantDays').value);
+
+            trackerPlants.push({
+                id: Date.now(),
+                name: name,
+                location: location,
+                interval: interval,
+                daysLeft: interval
+            });
+
+            closeModal('addTrackerModal');
+            document.getElementById('addPlantForm').reset();
+            renderTracker();
+        }
+
+        // Modal Utilities
+        function openPlantModal(plantId) {
+            const plant = plantsData.find(p => p.id === plantId);
+            if (!plant) return;
+
+            document.getElementById('modalImg').src = plant.image;
+            document.getElementById('modalTitle').innerText = plant.name;
+            document.getElementById('modalBotanical').innerText = plant.botanical;
+            document.getElementById('modalDesc').innerText = plant.desc;
+            document.getElementById('modalSunlight').innerText = plant.sunlight;
+            document.getElementById('modalWater').innerText = plant.water;
+            document.getElementById('modalSoil').innerText = plant.soil;
+            document.getElementById('modalPet').innerText = plant.pet;
+
+            document.getElementById('modalAddTrackerBtn').onclick = () => {
+                trackerPlants.push({
+                    id: Date.now(),
+                    name: plant.name,
+                    location: 'Indoor Garden',
+                    interval: 7,
+                    daysLeft: 7
+                });
+                closeModal('plantModal');
+                renderTracker();
+                scrollToSection('tracker');
+            };
+
+            document.getElementById('plantModal').classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Event Listeners for Filters & Tabs
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPlantGrid();
+            initGardenPlanner();
+            renderTracker();
+
+            // Search input listener
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                const activeTag = document.querySelector('.tag-btn.active').dataset.category;
+                renderPlantGrid(activeTag, e.target.value);
+            });
+
+            // Category tag buttons
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const search = document.getElementById('searchInput').value;
+                    renderPlantGrid(btn.dataset.category, search);
+                });
+            });
+
+            // Seasonal Tabs
+            document.querySelectorAll('.tab-btn').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
